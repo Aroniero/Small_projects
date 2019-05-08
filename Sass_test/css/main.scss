@@ -1,0 +1,147 @@
+$colors: (
+  primary: #005dff,
+  primary-light: lighten(#005dff, 40%),
+  primary-dark: darken(#005dff, 40%),
+  accent: #fff6bb
+);
+
+$padding: 15px;
+$borders: 15px;
+
+@function color($color-name) {
+  @return map-get($map: $colors, $key: $color-name);
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Arial";
+  margin: 0;
+
+  #bg {
+    clip-path: polygon(100% 0, 100% 68%, 63% 100%, 0 100%, 0 0);
+    background-color: color(primary);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+
+    @include desktop {
+      clip-path: polygon(0 0, 75% 0, 57% 100%, 0% 100%);
+    }
+  }
+
+  header a {
+    color: #fff;
+    text-decoration: none;
+    padding: $padding;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+main {
+  @include desktop {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 50%;
+    grid-template-areas: "primary card";
+  }
+  section#card {
+    background: white;
+    margin: 1em auto;
+    padding: 20px;
+    border-radius: $borders;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 80%;
+
+    @include desktop {
+      grid-area: card;
+      height: fit-content;
+      align-self: center;
+      margin: 1em;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 10px 0 10px 0;
+
+        span {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: color(primary-light);
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        strong {
+          display: inline-block;
+          margin-left: max($numbers: 30px);
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  section#primary {
+    color: white;
+    padding: $padding;
+    text-align: center;
+
+    @include desktop {
+      grid-area: primary;
+      text-align: left;
+      margin: 4em 0 0 4em;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 10px;
+      text-transform: uppercase;
+
+      @include desktop {
+        width: 30%;
+        font-size: 4em;
+        line-height: 0.9em;
+      }
+    }
+
+    p {
+      font-size: 1.4em;
+    }
+
+    a {
+      color: color(primary-dark);
+      border-radius: $borders;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: color(accent);
+      display: block;
+      text-align: center;
+      margin: 50px auto 0 auto;
+
+      padding: $padding;
+      border: 2px solid color(primary);
+
+      @include desktop {
+        display: inline-block;
+        padding: $padding $padding * 4;
+      }
+    }
+  }
+}
