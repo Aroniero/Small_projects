@@ -1,10 +1,59 @@
+@media screen and (max-width: 768px) {
+  main {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  div.menu-branding,
+  ul.menu-nav {
+    float: none;
+    height: 50vh;
+    width: 100%;
+    min-height: 0;
+    -webkit-transform: none;
+            transform: none;
+  }
+  div.menu-branding.show,
+  ul.menu-nav.show {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .menu .menu-nav {
+    height: 75vh;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu .menu-branding {
+    height: 25vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  .menu .menu-branding .portrait {
+    background: url(../assets/portrait_small.jpg);
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body {
-  background: #000000;
+  background: #444;
   color: #fff;
   height: 100%;
   margin: 0;
@@ -132,8 +181,7 @@ main#home h1 {
   visibility: visible;
 }
 
-.menu .menu-branding,
-.menu .menu-nav {
+.menu-branding, .menu-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,7 +201,7 @@ main#home h1 {
   overflow: hidden;
 }
 
-.menu .menu-nav {
+.menu-nav {
   margin: 0;
   padding: 0;
   background: #373737;
@@ -164,12 +212,12 @@ main#home h1 {
   transition: all 0.5s ease-in-out;
 }
 
-.menu .menu-nav.show {
+.menu-nav.show {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
 
-.menu .menu-branding {
+.menu-branding {
   background: #444;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -177,12 +225,12 @@ main#home h1 {
           transform: translate3d(0, 100%, 0);
 }
 
-.menu .menu-branding.show {
+.menu-branding.show {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
 
-.menu .menu-branding .portrait {
+.menu-branding .portrait {
   width: 250px;
   height: 250px;
   background: url(../assets/portrait.jpg);
@@ -198,8 +246,14 @@ main#home h1 {
 }
 
 .menu .nav-item.show {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+}
+
+.menu .nav-item.current > a {
+  color: #eece1a;
 }
 
 .menu .nav-link {
@@ -217,25 +271,5 @@ main#home h1 {
 
 .menu .nav-link:hover {
   color: #eece1a;
-}
-
-.nav-item:nth-child(1) {
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-}
-
-.nav-item:nth-child(2) {
-  -webkit-transition-delay: 0.2s;
-          transition-delay: 0.2s;
-}
-
-.nav-item:nth-child(3) {
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
-}
-
-.nav-item:nth-child(4) {
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
 }
 /*# sourceMappingURL=main.css.map */
