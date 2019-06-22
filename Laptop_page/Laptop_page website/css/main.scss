@@ -1,0 +1,174 @@
+$blue: #5767b7;
+$pink: #c36cbb;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 80%;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  height: 10vh;
+  align-items: center;
+
+  .logo-container,
+  .nav-links,
+  .cart {
+    display: flex;
+  }
+
+  .logo-container {
+    flex: 1;
+
+    .logo {
+      font-size: 23px;
+      font-weight: 400;
+      margin: 7px;
+      color: $pink;
+    }
+  }
+
+  nav {
+    flex: 2;
+
+    .nav-links {
+      justify-content: space-around;
+      list-style: none;
+
+      .nav-link {
+        color: $blue;
+        font-size: 23px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .cart {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+
+.presentation {
+  display: flex;
+  margin: 120px 0 0 0;
+  height: 55vh;
+
+  // TEXT OF LAPTOP + BUTTONS
+  .introduction {
+    flex: 1;
+
+    // TEXT
+    h1,
+    p {
+      color: $blue;
+    }
+    h1 {
+      font-size: 45px;
+    }
+    p {
+      font-size: 30px;
+      margin: 50px 0 0 0;
+    }
+
+    // BUTTONS
+    .cta {
+      margin: 80px 0 0 0;
+      .cta-select,
+      .cta-add {
+        font-size: 18px;
+        padding: 14px;
+        font-weight: bold;
+        border: solid 3px $pink;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+      }
+      .cta-select {
+        color: $pink;
+        background-color: transparent;
+        img {
+          margin-left: 10px;
+        }
+      }
+      .cta-add {
+        color: white;
+        background-color: $pink;
+        margin: 0 0 0 30px;
+      }
+    }
+  }
+
+  // PICTURE OF LAPTOP
+  .cover {
+    flex: 1;
+    text-align: center;
+
+    .laptopImage {
+      filter: drop-shadow(0 5px 4px $blue);
+      animation: drop 1.5s ease;
+      margin-bottom: 40px;
+    }
+    .laptop-select {
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
+      width: 250px;
+      top: 75%;
+      right: 23%;
+      animation: up 1.5s ease;
+    }
+  }
+}
+
+.big-circle,
+.smaller-circle,
+.smallest-circle {
+  position: absolute;
+  z-index: -1;
+}
+
+.big-circle {
+  top: 0;
+  right: 0;
+}
+
+.smaller-circle {
+  bottom: 0%;
+  right: 20%;
+}
+
+.smallest-circle {
+  bottom: 0%;
+  right: 40%;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
