@@ -59,8 +59,9 @@ header {
 
 .presentation {
   display: flex;
+
   margin: 120px 0 0 0;
-  height: 55vh;
+  height: 40vh;
 
   // TEXT OF LAPTOP + BUTTONS
   .introduction {
@@ -81,7 +82,8 @@ header {
 
     // BUTTONS
     .cta {
-      margin: 80px 0 0 0;
+      margin: 50px 0 0 0;
+      display: flex;
       .cta-select,
       .cta-add {
         font-size: 18px;
@@ -115,7 +117,7 @@ header {
     .laptopImage {
       filter: drop-shadow(0 5px 4px $blue);
       animation: drop 1.5s ease;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
     .laptop-select {
       display: flex;
@@ -170,5 +172,108 @@ header {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .presentation {
+    flex-direction: column;
+    margin: 50px 0 0 0;
+
+    .introduction {
+      text-align: center;
+      p {
+        margin: 30px 0 0 0;
+      }
+    }
+
+    .cta {
+      justify-content: center;
+    }
+  }
+
+  .cover {
+    .laptopImage {
+      height: 70%;
+      margin: 50px 0 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  header {
+    flex-direction: column;
+    height: 30vh;
+    .logo-container {
+      margin: 10px;
+      .logo {
+        margin: 10px;
+      }
+    }
+
+    nav {
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        li {
+          margin: 10px;
+        }
+      }
+    }
+    .cart {
+      margin: 10px 0 0 0;
+    }
+  }
+
+  main {
+    .presentation {
+      .introduction {
+        h1 {
+          font-size: 30px;
+        }
+        p {
+          font-size: 20px;
+          margin: 20px 0 0 0;
+        }
+
+        .cta {
+          margin: 30px 0 0 0;
+          display: flex;
+          flex-direction: column;
+
+          .cta-select,
+          .cta-add {
+            margin: 10px 0 10px 0;
+          }
+        }
+      }
+      .cover {
+        margin: 40px 0 0 0;
+        .laptopImage {
+          height: 40%;
+        }
+      }
+    }
+    .big-circle,
+    .smaller-circle,
+    .smallest-circle {
+      opacity: 0.9;
+    }
+
+    .big-circle {
+      height: 120%;
+    }
+    .smaller-circle {
+      bottom: -50%;
+      right: 5%;
+      height: 50%;
+    }
+
+    .smallest-circle {
+      bottom: -50%;
+      right: 0%;
+    }
   }
 }

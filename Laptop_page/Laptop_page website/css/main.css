@@ -74,7 +74,7 @@ header .cart {
   display: -ms-flexbox;
   display: flex;
   margin: 120px 0 0 0;
-  height: 55vh;
+  height: 40vh;
 }
 
 .presentation .introduction {
@@ -98,7 +98,10 @@ header .cart {
 }
 
 .presentation .introduction .cta {
-  margin: 80px 0 0 0;
+  margin: 50px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .presentation .introduction .cta .cta-select,
@@ -139,7 +142,7 @@ header .cart {
           filter: drop-shadow(0 5px 4px #5767b7);
   -webkit-animation: drop 1.5s ease;
           animation: drop 1.5s ease;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .presentation .cover .laptop-select {
@@ -227,6 +230,107 @@ header .cart {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .presentation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 50px 0 0 0;
+  }
+  .presentation .introduction {
+    text-align: center;
+  }
+  .presentation .introduction p {
+    margin: 30px 0 0 0;
+  }
+  .presentation .cta {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .cover .laptopImage {
+    height: 70%;
+    margin: 50px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 30vh;
+  }
+  header .logo-container {
+    margin: 10px;
+  }
+  header .logo-container .logo {
+    margin: 10px;
+  }
+  header nav .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  header nav .nav-links li {
+    margin: 10px;
+  }
+  header .cart {
+    margin: 10px 0 0 0;
+  }
+  main .presentation .introduction h1 {
+    font-size: 30px;
+  }
+  main .presentation .introduction p {
+    font-size: 20px;
+    margin: 20px 0 0 0;
+  }
+  main .presentation .introduction .cta {
+    margin: 30px 0 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .presentation .introduction .cta .cta-select,
+  main .presentation .introduction .cta .cta-add {
+    margin: 10px 0 10px 0;
+  }
+  main .presentation .cover {
+    margin: 40px 0 0 0;
+  }
+  main .presentation .cover .laptopImage {
+    height: 40%;
+  }
+  main .big-circle,
+  main .smaller-circle,
+  main .smallest-circle {
+    opacity: 0.9;
+  }
+  main .big-circle {
+    height: 120%;
+  }
+  main .smaller-circle {
+    bottom: -50%;
+    right: 5%;
+    height: 50%;
+  }
+  main .smallest-circle {
+    bottom: -50%;
+    right: 0%;
   }
 }
 /*# sourceMappingURL=main.css.map */
