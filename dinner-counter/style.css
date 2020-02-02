@@ -6,6 +6,24 @@
 
 body{
   background-color: #34495e;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 200px;
+}
+.item > div {
+  border: solid 1px white;
+  padding: 5px;
+  margin: 0 2px;
 
 }
+.item {
+  display: flex;
+
+}
+
 
