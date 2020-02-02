@@ -25,7 +25,7 @@
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationTooltip01">Klasa</label>
-        <input type="value" class="form-control" id="validationTooltip01"  required>
+        <input type="number" class="form-control" id="validationTooltip01"  required>
       </div>
     </div>
     <div class="form-row">
@@ -51,7 +51,7 @@
 
     </div>
 
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="col-md-12 btn-lg btn-primary" type="submit">Submit form</button>
   </form>
 
 
@@ -59,43 +59,42 @@
 </div>
 
 
-  <table class="table table-bordered table-dark table-hover table-md">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Imię</th>
-        <th>Nazwisko</th>
-        <th>Klasa</th>
-        <th>Ilość obiadu</th>
-        <th>Cena obiadu</th>
-        <th>Wartość obiadu</th>
-        <th>Ilość herbaty</th>
-        <th>Cena herbaty</th>
-        <th>Wartość herbaty</th>
-        <th>Razem</th>
-        <th>Podpis</th>
 
+<div class="container" >
+  <table class="table table-hover ">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Klasa</th>
+        <th scope="col">Ilość obiadów</th>
+        <th scope="col">Cena obiadów</th>
+        <th scope="col">Wartość obiadów</th>
+        <th scope="col">Ilość herbat</th>
+        <th scope="col">Cena herbat</th>
+        <th scope="col">Wartość herbat</th>
+        <th scope="col">Suma</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th>1</th>
-        <td>Andrzej</td>
-        <td>Andrzejewicz</td>
-        <td>4</td>
+        <td>Oliwier</td>
+        <td>Maciejewski</td>
+        <td>0</td>
         <td>15</td>
-        <td>2,8 zł</td>
-        <td>42</td>
+        <td>2.8zł</td>
+        <td>30zł</td>
         <td>15</td>
-        <td>2,8 zł</td>
-        <td>42</td>
-        <td>100</td>
-        <td></td>
+        <td>2.8zł</td>
+        <td>30zł</td>
+        <td>60zł</td>
+        <td><button type="button" class="btn btn-danger">Usuń</button></td>
+        <td><button type="button" class="btn btn-warning">Edytuj</button></td>
       </tr>
 
     </tbody>
   </table>
-
+</div>
 
 
 
