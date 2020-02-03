@@ -1,23 +1,22 @@
 
 
-
 // Functions
 function addItem(e) {
   e.preventDefault()
-  // Information
-  const name = document.querySelector('#name').value;
-  const surname = document.querySelector('#surname').value;
-  const classNum = document.querySelector('#classNum').value;
+  let name = document.querySelector('#name');
+  let surname = document.querySelector('#surname');
+  let classNum = document.querySelector('#classNum');
   // Dinner
-  const dinnerQuantity = document.querySelector('#dinnerQuantity').value;
-  const dinnerPrice = document.querySelector('#dinnerPrice').value;
+  let dinnerQuantity = document.querySelector('#dinnerQuantity');
+  let dinnerPrice = document.querySelector('#dinnerPrice');
   // Tea
-  const teaQuantity = document.querySelector('#teaQuantity').value;
-  const teaPrice = document.querySelector('#teaPrice').value;
+  let teaQuantity = document.querySelector('#teaQuantity');
+  let teaPrice = document.querySelector('#teaPrice');
+  // Information
 
   // Value
-  let dinnerValue = Math.round(parseFloat(dinnerQuantity) * parseFloat(dinnerPrice));
-  let teaValue = Math.round(parseFloat(teaQuantity) * parseFloat(teaPrice));
+  let dinnerValue = Math.round(parseFloat(dinnerQuantity.value) * parseFloat(dinnerPrice.value));
+  let teaValue = Math.round(parseFloat(teaQuantity.value) * parseFloat(teaPrice.value));
 
   // Total value
   let totalValue = (dinnerValue + teaValue)
@@ -26,39 +25,124 @@ function addItem(e) {
   const table = document.querySelector('#tableOutput');
   const tableRow = document.createElement('tr');
   const rowContent = `
-        <td>${name}</td>
-        <td>${surname}</td>
-        <td>${classNum}</td>
-        <td>${dinnerQuantity}</td>
-        <td>${dinnerPrice}zł</td>
-        <td>${dinnerValue}zł</td>
-        <td>${teaQuantity}</td>
-        <td>${teaPrice}zł</td>
-        <td>${teaValue}zł</td>
-        <td>${totalValue}zł</td>
+        <td class="name">${name.value}</td>
+        <td class="surname">${surname.value}</td>
+        <td class="classNum">${classNum.value}</td>
+        <td class="dinnerQuantity">${dinnerQuantity.value}</td>
+        <td class="dinnerPrice">${dinnerPrice.value}zł</td>
+        <td class="dinnerValue">${dinnerValue}zł</td>
+        <td class="teaQuantity">${teaQuantity.value}</td>
+        <td class="teaPrice">${teaPrice.value}zł</td>
+        <td class="teaValue">${teaValue}zł</td>
+        <td class="totalValue">${totalValue}zł</td>
         <td><button type="button" class="btn btn-danger">Usuń</button></td>
         <td><button type="button" class="btn btn-warning">Edytuj</button></td>
   `
 
+  // Appending item to the tableOutput
   tableRow.innerHTML = rowContent;
-  table.append(tableRow);
-  tableRow.querySelector('.btn-danger').addEventListener('click', removeItem)
+  table.appendChild(tableRow);
+
+  // Adding listeners to the new items
+  tableRow.querySelector('.btn-warning').addEventListener('click', changeItem);
+  tableRow.querySelector('.btn-danger').addEventListener('click', removeItem);
+
+  // Clearing inputs
+  name.value = '';
+  surname.value = '';
+  classNum.value = '';
+  dinnerQuantity.value = '';
+  teaQuantity.value = '';
+
+
+
 
 }
+
 
 // Adding item to the table
-const dinnerForm = document.querySelector('#dinnerForm');
-dinnerForm.addEventListener('submit', addItem)
+  const dinnerForm = document.querySelector('#dinnerForm');
+  dinnerForm.addEventListener('submit', addItem)
+
+
+
 
 // REMOVING ITEM FROM THE TABLE
-const deleteButtons = document.querySelectorAll('.btn-danger');
+  const deleteButtons = document.querySelectorAll('.btn-danger');
 
-function removeItem() {
-  this.parentElement.parentElement.remove();
+  function removeItem() {
+    this.parentElement.parentElement.remove();
 
-  // singleButton.parentElement.parentElement.remove();
+    // singleButton.parentElement.parentElement.remove();
+  }
+  deleteButtons.forEach((singleButton) => {
+    singleButton.addEventListener('click', removeItem)
+  }
+  );
+
+// UPDATING STATE _________________________________________________
+
+const updateButtons = document.querySelectorAll('.btn-warning');
+updateButtons.forEach(updateButton => {
+  updateButton.addEventListener('click', changeItem)
+});
+
+
+function changeItem() {
+  const currentRow = this.parentElement.parentElement;
+
+
+  // ROW INFORMATIONS
+    let currName = currentRow.querySelector('.name').innerText;
+
+
+    const currSurname = currentRow.querySelector('.surname').innerText;
+    const currClassNum = currentRow.querySelector('.classNum').innerText;
+
+    // dinnerr
+    const currDinnerQuantity = currentRow.querySelector('.dinnerQuantity').innerText;
+    let currDinnerPrice = currentRow.querySelector('.dinnerPrice').innerText;
+        currDinnerPrice = parseFloat(currDinnerPrice.replace('zł', ''));
+
+    // tea
+    const currTeaQuantity = currentRow.querySelector('.teaQuantity').innerText;
+    let currTeaPrice = currentRow.querySelector('.teaPrice').innerText;
+        currTeaPrice = parseFloat(currTeaPrice.replace('zł', ''));
+
+
+
+
+  // INPUT INFORMATIONS
+    let inputName = document.querySelector('#name');
+    let inputSurname = document.querySelector('#surname');
+    let inputclassNum = document.querySelector('#classNum');
+    // Dinner
+    const inputDinnerQuantity = document.querySelector('#dinnerQuantity');
+    const inputDinnerPrice = document.querySelector('#dinnerPrice');
+
+    // Tea
+    const inputTeaQuantity = document.querySelector('#teaQuantity');
+    const inputTeaPrice = document.querySelector('#teaPrice');
+
+
+
+  // ASSIGNING ROW INFORMATIONS INTO INPUTS
+    inputName.value = currName;
+
+    inputSurname.value = currSurname;
+    inputclassNum.value = currClassNum;
+      // Dinner
+    inputDinnerQuantity.value = currDinnerQuantity;
+   inputDinnerPrice.value = currDinnerPrice;
+      // Tea
+    inputTeaQuantity.value = currTeaQuantity;
+    inputTeaPrice.value = currTeaPrice;
+
+    currentRow.remove();
+
+
+
+
 }
-deleteButtons.forEach((singleButton) => {
-  singleButton.addEventListener('click', removeItem)
-}
-);
+
+
