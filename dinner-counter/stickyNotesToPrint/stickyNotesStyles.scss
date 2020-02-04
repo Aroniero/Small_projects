@@ -1,4 +1,11 @@
 
+.container-md{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 20px 0;
+
+}
+
 .stickyNotesContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;

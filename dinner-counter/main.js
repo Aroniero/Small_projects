@@ -7,7 +7,7 @@
   }
 
   peopleArr.map((person) => {
-    if (person == null) {
+    if (person == null || (person.day)) {
       return
     } else {
       const table = document.querySelector('#tableOutput');

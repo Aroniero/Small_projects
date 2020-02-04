@@ -7,6 +7,8 @@ for (var key in localStorage) {
 
 const date = document.querySelector('.payDate');
 
+
+
 date.addEventListener('change', (e) => {
   const currDate = e.target.value;
   const year = currDate.slice(0,4);
@@ -19,8 +21,10 @@ date.addEventListener('change', (e) => {
     year
   }
   localStorage.setItem('date', JSON.stringify(actualDate));
+
   location.reload();
 })
+
 
     console.log('hello');
 

@@ -5,7 +5,8 @@ for (var key in localStorage) {
 }
 
   peopleArr.map((person) => {
-    if (person == null) {
+    console.log(person);
+    if ((person == null) || (person.day)) {
       return
     } else {
       const table = document.querySelector('.table');
