@@ -17,21 +17,21 @@
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationTooltip01">Imię</label>
-        <input type="text" class="form-control" id="name"  required>
+        <input type="text" class="form-control" id="name" value="Andrzej"  required>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationTooltip01">Nazwisko</label>
-        <input type="text" class="form-control" id="surname"  required>
+        <input type="text" class="form-control" id="surname" value="Andrzejewicz" required>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationTooltip01">Klasa</label>
-        <input type="number" class="form-control" id="classNum"  required>
+        <input type="number" class="form-control" id="classNum" value="2"  required>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Ilość Obiadów</label>
-        <input type="number" class="form-control" id="dinnerQuantity"  required>
+        <input type="number" class="form-control" id="dinnerQuantity" value="2"  required>
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Cena Obiadów</label>
@@ -42,7 +42,7 @@
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Ilość herbaty</label>
-        <input type="number" class="form-control" id="teaQuantity"  required>
+        <input type="number" class="form-control" id="teaQuantity" value="2"  required>
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Cena herbaty</label>
@@ -60,7 +60,7 @@
 
 
 
-<div class="container " >
+<div class="container" >
   <table class="table table-hover ">
     <thead class="thead-dark">
       <tr>
@@ -102,12 +102,17 @@
 
 
 
-<script src="main.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+  integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
+<script src="main.js"></script>
+<link rel="stylesheet" href="pdfGenerator.js">
+  </body>
 </html>
