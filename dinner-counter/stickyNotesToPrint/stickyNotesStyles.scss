@@ -1,0 +1,59 @@
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+
+  .stickyNote{
+    border: 1px solid black;
+    padding: 10px;
+  }
+  h4 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    text-decoration: underline;
+    text-transform: uppercase;
+    span{
+      text-transform: lowercase;
+    }
+  }
+  h5{
+    text-align: center;
+    margin: 15px 0;
+    font-size: 20px;
+  }
+}
+
+.person-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 22px;
+  border: 1px solid black;
+  padding: 0 10px;
+  .person, .classNum{
+
+    text-align: center;
+
+  }
+
+  .person, .classNum, .teas, .teasValue{
+    border-bottom: solid 1px black;
+
+  }
+  .dinners, .teas, .total {
+    text-align: end;
+  }
+  .dinnersValue, .teasValue, .totalValue {
+    text-align: end;
+
+  }
+  .totalValue{
+    font-weight: bold;
+  }
+}
+
+
+

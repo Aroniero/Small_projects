@@ -1,0 +1,35 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #34495e;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.person div {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.person {
+  border-bottom: 1px solid black;
+  display: -ms-grid;
+  display: grid;
+  /* grid-auto-rows: minmax(50px, auto); */
+  -ms-grid-columns: 2fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 4fr;
+      grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 4fr;
+}
+
+.person__name, .person__surname, .person__class, .person__dinnerQuantity, .person__dinnerPrice, .person__dinnerValue, .person__teaQuantity, .person__teaPrice, .person__teaValue, .person__totalSum {
+  border-right: 1px solid black;
+}
+/*# sourceMappingURL=table.css.map */

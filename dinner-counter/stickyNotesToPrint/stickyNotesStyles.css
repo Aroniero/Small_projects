@@ -1,0 +1,63 @@
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+}
+
+.container .stickyNote {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.container h4 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.container h4 span {
+  text-transform: lowercase;
+}
+
+.container h5 {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+.person-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  font-size: 22px;
+  border: 1px solid black;
+  padding: 0 10px;
+}
+
+.person-container .person, .person-container .classNum {
+  text-align: center;
+}
+
+.person-container .person, .person-container .classNum, .person-container .teas, .person-container .teasValue {
+  border-bottom: solid 1px black;
+}
+
+.person-container .dinners, .person-container .teas, .person-container .total {
+  text-align: end;
+}
+
+.person-container .dinnersValue, .person-container .teasValue, .person-container .totalValue {
+  text-align: end;
+}
+
+.person-container .totalValue {
+  font-weight: bold;
+}
+/*# sourceMappingURL=stickyNotesStyles.css.map */

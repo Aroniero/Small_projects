@@ -1,61 +1,63 @@
 
 
-// DISPLAYING ITEMS ON THE TABLE
-let peopleArr = [];
-for (var key in localStorage) {
-  peopleArr.push(JSON.parse(localStorage.getItem(key)))
-}
-
-peopleArr.map((person) => {
-  if (person == null) {
-    return
-  } else {
-    const table = document.querySelector('#tableOutput');
-    const tableRow = document.createElement('tr');
-    const rowContent = `
-          <td class="name">${person.name}</td>
-          <td class="surname">${person.surname}</td>
-          <td class="classNum">${person.classNum}</td>
-          <td class="dinnerQuantity">${person.dinnerQuantity}</td>
-          <td class="dinnerPrice">${person.dinnerPrice}zł</td>
-          <td class="dinnerValue">${person.dinnerValue}zł</td>
-          <td class="teaQuantity">${person.teaQuantity}</td>
-          <td class="teaPrice">${person.teaPrice}zł</td>
-          <td class="teaValue">${person.teaValue}zł</td>
-          <td class="totalValue">${person.totalValue}zł</td>
-          <td><button type="button" class="btn btn-danger">Usuń</button></td>
-          <td><button type="button" class="btn btn-warning">Edytuj</button></td>
-    `
-    // Appending item to the tableOutput
-    tableRow.innerHTML = rowContent;
-    table.appendChild(tableRow);
-
-    // Adding listeners to the new items
-    tableRow.querySelector('.btn-warning').addEventListener('click', changeItem);
-    tableRow.querySelector('.btn-danger').addEventListener('click', removeItem);
+// DISPLAYING ITEMS ON THE TABLE showcase
+  let peopleArr = [];
+  for (var key in localStorage) {
+    peopleArr.push(JSON.parse(localStorage.getItem(key)))
   }
-})
+
+  peopleArr.map((person) => {
+    if (person == null) {
+      return
+    } else {
+      const table = document.querySelector('#tableOutput');
+      const tableRow = document.createElement('tr');
+      const rowContent = `
+            <td class="name">${person.name}</td>
+            <td class="surname">${person.surname}</td>
+            <td class="classNum">${person.classNum}</td>
+            <td class="dinnerQuantity">${person.dinnerQuantity}</td>
+            <td class="dinnerPrice">${person.dinnerPrice}zł</td>
+            <td class="dinnerValue">${person.dinnerValue}zł</td>
+            <td class="teaQuantity">${person.teaQuantity}</td>
+            <td class="teaPrice">${person.teaPrice}zł</td>
+            <td class="teaValue">${person.teaValue}zł</td>
+            <td class="totalValue">${person.totalValue}zł</td>
+            <td><button type="button" class="btn btn-danger">Usuń</button></td>
+            <td><button type="button" class="btn btn-warning">Edytuj</button></td>
+      `
+      // Appending item to the tableOutput
+      tableRow.innerHTML = rowContent;
+      table.appendChild(tableRow);
+
+      // Adding listeners to the new items
+      tableRow.querySelector('.btn-warning').addEventListener('click', changeItem);
+      tableRow.querySelector('.btn-danger').addEventListener('click', removeItem);
+    }
+  })
+
+
 
 
 // Person instance
-class Person {
-  constructor(name, surname, classNum, dinnerQuantity, dinnerPrice, dinnerValue, teaQuantity, teaPrice, teaValue, totalValue) {
-    this.name = name;
-    this.surname = surname;
-    this.classNum = classNum;
-    // DINNER
-    this.dinnerQuantity = dinnerQuantity;
-    this.dinnerPrice = dinnerPrice;
-    this.dinnerValue = dinnerValue
-    // TEA
-    this.teaQuantity = teaQuantity;
-    this.teaPrice = teaPrice;
-    this.teaValue = teaValue;
-    // Total value
-    this.totalValue = totalValue;
+  class Person {
+    constructor(name, surname, classNum, dinnerQuantity, dinnerPrice, dinnerValue, teaQuantity, teaPrice, teaValue, totalValue) {
+      this.name = name;
+      this.surname = surname;
+      this.classNum = classNum;
+      // DINNER
+      this.dinnerQuantity = dinnerQuantity;
+      this.dinnerPrice = dinnerPrice;
+      this.dinnerValue = dinnerValue
+      // TEA
+      this.teaQuantity = teaQuantity;
+      this.teaPrice = teaPrice;
+      this.teaValue = teaValue;
+      // Total value
+      this.totalValue = totalValue;
 
+    }
   }
-}
 
 
 // Adding item to the table
@@ -116,11 +118,11 @@ class Person {
     tableRow.querySelector('.btn-danger').addEventListener('click', removeItem);
 
     // Clearing inputs
-    // name.value = '';
-    // surname.value = '';
-    // classNum.value = '';
-    // dinnerQuantity.value = '';
-    // teaQuantity.value = '';
+    name.value = '';
+    surname.value = '';
+    classNum.value = '';
+    dinnerQuantity.value = '';
+    teaQuantity.value = '';
 
   }
 
@@ -156,8 +158,6 @@ class Person {
 
     // ROW INFORMATIONS
       let currName = currentRow.querySelector('.name').innerText;
-
-
       const currSurname = currentRow.querySelector('.surname').innerText;
       const currClassNum = currentRow.querySelector('.classNum').innerText;
 
@@ -195,7 +195,7 @@ class Person {
       inputclassNum.value = currClassNum;
         // Dinner
       inputDinnerQuantity.value = currDinnerQuantity;
-    inputDinnerPrice.value = currDinnerPrice;
+      inputDinnerPrice.value = currDinnerPrice;
         // Tea
       inputTeaQuantity.value = currTeaQuantity;
       inputTeaPrice.value = currTeaPrice;
