@@ -1,11 +1,39 @@
 
 
 // DISPLAYING ITEMS ON THE TABLE showcase
+  // GETTING ARRAY OF PEOPLE
   let peopleArr = [];
   for (var key in localStorage) {
     peopleArr.push(JSON.parse(localStorage.getItem(key)))
   }
 
+  // SORTING PEOPLE BY CLASSNUM
+  function compare(a, b) {
+    // console.log(a,b);
+    if (a === null || b === null) {
+      return
+    }
+    const classNumA = parseInt(a.classNum);
+    const classNumB = parseInt(b.classNum);
+
+
+    if (classNumA == null || classNumB == null) {
+      return
+    } else if (isNaN(classNumA) || isNaN(classNumB)) {
+      return
+    }
+
+    let comparison = 0;
+    if (classNumA > classNumB) {
+      comparison = 1;
+    } else if (classNumA < classNumB) {
+      comparison = -1;
+    }
+     return comparison;
+  }
+  peopleArr.sort(compare);
+
+  // CREATING A HTML FOR EACH PERSON
   peopleArr.map((person) => {
     if (person == null || (person.day)) {
       return
