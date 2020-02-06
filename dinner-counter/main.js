@@ -11,43 +11,27 @@
   }
   // console.log(peopleArr);
 
-  const filteredPeople = peopleArr.filter((person) =>
+  function sortingArr(arr) {
+    const filteredPeople = arr.filter((person) =>
       person !== null
-      ).filter((person) =>
-        person.hasOwnProperty('name') ? person : ''
-      )
+    ).filter((person) =>
+      person.hasOwnProperty('name') ? person : ''
+    )
+    // console.log(filteredPeople);
 
 
-  // SORTING PEOPLE BY CLASSNUM
-  function compare(a, b) {
-    // console.log(a,b);
-
-    if (a === null || b === null) {
-      return
-    }
-    const classNumA = parseInt(a.classNum);
-    const classNumB = parseInt(b.classNum);
-    // console.log(classNumA, classNumB);
-
-    if (classNumA == null || classNumB == null) {
-      return
-    } else if (isNaN(classNumA) || isNaN(classNumB)) {
-      return
-    }
-
-    let comparison = 0;
-    if (classNumA > classNumB) {
-      comparison = 1;
-    } else if (classNumA < classNumB) {
-      comparison = -1;
-    }
-     return comparison;
+    return filteredPeople.sort((a, b) => {
+      // console.log(parseInt(a.classNum), parseInt(b.classNum));
+      return parseFloat(a.classNum) < parseFloat(b.classNum) ? -1 : 1
+    })
   }
 
-  filteredPeople.sort(compare);
 
-  // CREATING A HTML FOR EACH PERSON
-  peopleArr.map((person) => {
+
+    // console.log(sorted);
+
+// CREATING A HTML FOR EACH PERSON
+sortingArr(peopleArr).map((person) => {
     if (person == null || (person.day)) {
       return
     } else {
@@ -56,7 +40,7 @@
       const rowContent = `
             <td class="name">${person.name}</td>
             <td class="surname">${person.surname}</td>
-            <td class="classNum">${person.classNum}</td>
+            <td class="classNum">${person.classNum === '-1' ? '-' : person.classNum}</td>
             <td class="dinnerQuantity">${person.dinnerQuantity}</td>
             <td class="dinnerPrice">${person.dinnerPrice}zł</td>
             <td class="dinnerValue">${person.dinnerValue}zł</td>
@@ -106,19 +90,19 @@
     // Information
     let name = document.querySelector('#name').value;
     let surname = document.querySelector('#surname').value;
-    let classNum = document.querySelector('#classNum').value;
+    const classNum = document.querySelector('.classNum').value;
     // Dinner
     let dinnerQuantity = document.querySelector('#dinnerQuantity').value;
     let dinnerPrice = document.querySelector('#dinnerPrice').value;
     // Tea
     let teaQuantity = document.querySelector('#teaQuantity').value;
     let teaPrice = document.querySelector('#teaPrice').value;
-
+    console.log(name, surname);
     // Value
     let dinnerValue = Math.round(parseFloat(dinnerQuantity) * parseFloat(dinnerPrice));
     let teaValue = Math.round(parseFloat(teaQuantity) * parseFloat(teaPrice));
-    const newClass = document.querySelector('.custom-select').value;
-    console.log(newClass);
+
+
 
     // Total value
     let totalValue = (dinnerValue + teaValue)
@@ -158,11 +142,10 @@
     tableRow.querySelector('.btn-danger').addEventListener('click', removeItem);
 
     // Clearing inputs
-    name.value = '';
-    surname.value = '';
-    classNum.value = '';
-    dinnerQuantity.value = '';
-    teaQuantity.value = '';
+    dinnerForm.reset();
+
+    location.reload();
+    return false;
 
   }
 
@@ -179,7 +162,7 @@
     const surname = this.parentElement.parentElement.querySelector('.surname').innerHTML;
 
 
-    console.log(localStorage.removeItem(`${name}-${surname}`));
+    localStorage.removeItem(`${name}-${surname}`);
 
     this.parentElement.parentElement.remove();
 
@@ -194,12 +177,13 @@
 
   function changeItem() {
     const currentRow = this.parentElement.parentElement;
-
+    // console.log(currentRow);
 
     // ROW INFORMATIONS
       let currName = currentRow.querySelector('.name').innerText;
       const currSurname = currentRow.querySelector('.surname').innerText;
-      const currClassNum = currentRow.querySelector('.classNum').innerText;
+      const currClassNum = currentRow.querySelector('.classNum').innerHTML;
+      // console.log(currClassNum, currSurname);
 
       // dinnerr
       const currDinnerQuantity = currentRow.querySelector('.dinnerQuantity').innerText;
@@ -217,7 +201,7 @@
     // INPUT INFORMATIONS
       let inputName = document.querySelector('#name');
       let inputSurname = document.querySelector('#surname');
-      let inputclassNum = document.querySelector('#classNum');
+      let inputclassNum = document.querySelector('.classNum');
       // Dinner
       const inputDinnerQuantity = document.querySelector('#dinnerQuantity');
       const inputDinnerPrice = document.querySelector('#dinnerPrice');

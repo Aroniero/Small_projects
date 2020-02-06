@@ -1,8 +1,6 @@
 
-let peopleArr = [];
-for (var key in localStorage) {
-    peopleArr.push(JSON.parse(localStorage.getItem(key)))
-}
+
+
 
 
 const date = document.querySelector('.payDate');
@@ -26,9 +24,30 @@ date.addEventListener('change', (e) => {
 })
 
 
-    console.log('hello');
 
-peopleArr.map((person) => {
+
+  let peopleArr = [];
+  for (var key in localStorage) {
+    peopleArr.push(JSON.parse(localStorage.getItem(key)))
+  }
+  console.log(peopleArr);
+
+  function sortingArr(arr) {
+    const filteredPeople = arr.filter((person) =>
+      person !== null
+    ).filter((person) =>
+      person.hasOwnProperty('name') ? person : ''
+    )
+    // console.log(filteredPeople);
+
+
+    return filteredPeople.sort((a, b) => {
+      // console.log(parseInt(a.classNum), parseInt(b.classNum));
+      return parseFloat(a.classNum) < parseFloat(b.classNum) ? -1 : 1
+    })
+  }
+
+sortingArr(peopleArr).map((person) => {
   // console.log(person);
   if (person == null || person.day ) {
     return
@@ -37,14 +56,14 @@ peopleArr.map((person) => {
     const stickyNote = document.createElement('div');
     stickyNote.classList.add('stickyNote');
     const date = JSON.parse(localStorage.getItem('date'));
-    console.log(person.classNum);
+
 
     const rowContent = `
-        <h4>Informacja dla ${person.classNum === '' ? 'nauczycieli' : `rodziców`}</h4>
+        <h4>Informacja dla ${person.classNum === '-1' ? 'nauczycieli' : `rodziców`}</h4>
         <h5>Uprzejmie proszę o wpłatę należności z tytułu <br/> dożywiania do p. Aldony Godlewskiej</h5>
         <div class="person-container">
           <div class="person ">${person.surname}  ${person.name}</div>
-          <div class="classNum">${person.classNum === '' ? '' : `Klasa ${person.classNum}`}</div>
+          <div class="classNum">${person.classNum === '-1' ? '' : `Klasa ${person.classNum}`}</div>
           <div class="dinners">Obiady: </div>
           <div class="dinnersValue">${person.dinnerQuantity} * ${person.dinnerPrice}zł = ${person.dinnerValue} zł</div>
           <div class="teas">Herbaty: </div>

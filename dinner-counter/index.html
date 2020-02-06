@@ -19,18 +19,18 @@
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationTooltip01">Imię</label>
-          <input type="text" class="form-control" id="name" value="Andrzej"  required>
+          <input type="text" class="form-control" id="name"  required>
         </div>
 
         <div class="col-md-4 mb-3">
           <label for="validationTooltip01">Nazwisko</label>
-          <input type="text" class="form-control" id="surname" value="Andrzejewicz" required>
+          <input type="text" class="form-control" id="surname" required>
         </div>
 
 
         <div class="col-md-4 mb-3">
           <label for="validationTooltip01">Klasa</label>
-          <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+          <select class="custom-select classNum" id="inputGroupSelect03" aria-label="Example select with button addon">
 
             <option value="0" selected>0</option>
             <option value="1">1</option>
@@ -46,27 +46,24 @@
         </div>
 
 
-      <div class="col-md-4 mb-3">
-        <label for="validationTooltip01">Klasa</label>
-        <input type="number" class="form-control" id="classNum" value="2"  required>
-      </div>
+
 
     </div>
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Ilość Obiadów</label>
-        <input type="number" class="form-control" id="dinnerQuantity" value="2"  required>
+        <input type="number" class="form-control" id="dinnerQuantity" required>
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Cena Obiadów</label>
-        <input type="number" class="form-control text-center" id="dinnerPrice" value="2.8" required>
+        <input type="number" class="form-control text-center" id="dinnerPrice" value="2.9" required>
       </div>
 
     </div>
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Ilość herbaty</label>
-        <input type="number" class="form-control" id="teaQuantity" value="2"  required>
+        <input type="number" class="form-control" id="teaQuantity" required>
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Cena herbaty</label>
@@ -75,7 +72,7 @@
 
     </div>
 
-    <button class="col-md-12 btn-lg btn-primary" type="submit">Submit form</button>
+    <button class="col-md-12 btn-lg btn-primary" type="submit">Dodaj osobę</button>
   </form>
 
 
@@ -100,20 +97,7 @@
       </tr>
     </thead>
     <tbody id="tableOutput">
-      <tr>
-        <td class="name">Oliwier</td>
-        <td class="surname">Maciejewski</td>
-        <td class="classNum">0</td>
-        <td class="dinnerQuantity">15</td>
-        <td class="dinnerPrice">2.8zł</td>
-        <td class="dinnerValue">30zł</td>
-        <td class="teaQuantity">15</td>
-        <td class="teaPrice">2.8zł</td>
-        <td class="teaValue">30zł</td>
-        <td class="totalValue">60zł</td>
-        <td><button type="button" class="btn btn-danger">Usuń</button></td>
-        <td><button type="button" class="btn btn-warning">Edytuj</button></td>
-      </tr>
+
 
 
     </tbody>
