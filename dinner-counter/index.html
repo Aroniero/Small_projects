@@ -18,17 +18,39 @@
     <form class="needs-validation" id="dinnerForm" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
-        <label for="validationTooltip01">Imię</label>
-        <input type="text" class="form-control" id="name" value="Andrzej"  required>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationTooltip01">Nazwisko</label>
-        <input type="text" class="form-control" id="surname" value="Andrzejewicz" required>
-      </div>
+          <label for="validationTooltip01">Imię</label>
+          <input type="text" class="form-control" id="name" value="Andrzej"  required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="validationTooltip01">Nazwisko</label>
+          <input type="text" class="form-control" id="surname" value="Andrzejewicz" required>
+        </div>
+
+
+        <div class="col-md-4 mb-3">
+          <label for="validationTooltip01">Klasa</label>
+          <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+
+            <option value="0" selected>0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="-1">Nauczyciel</option>
+          </select>
+        </div>
+
+
       <div class="col-md-4 mb-3">
         <label for="validationTooltip01">Klasa</label>
         <input type="number" class="form-control" id="classNum" value="2"  required>
       </div>
+
     </div>
     <div class="form-row">
       <div class="col-md-6 mb-3">

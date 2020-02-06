@@ -1,21 +1,33 @@
 
 
+
+
 // DISPLAYING ITEMS ON THE TABLE showcase
   // GETTING ARRAY OF PEOPLE
   let peopleArr = [];
+
   for (var key in localStorage) {
     peopleArr.push(JSON.parse(localStorage.getItem(key)))
   }
+  // console.log(peopleArr);
+
+  const filteredPeople = peopleArr.filter((person) =>
+      person !== null
+      ).filter((person) =>
+        person.hasOwnProperty('name') ? person : ''
+      )
+
 
   // SORTING PEOPLE BY CLASSNUM
   function compare(a, b) {
     // console.log(a,b);
+
     if (a === null || b === null) {
       return
     }
     const classNumA = parseInt(a.classNum);
     const classNumB = parseInt(b.classNum);
-
+    // console.log(classNumA, classNumB);
 
     if (classNumA == null || classNumB == null) {
       return
@@ -31,7 +43,8 @@
     }
      return comparison;
   }
-  peopleArr.sort(compare);
+
+  filteredPeople.sort(compare);
 
   // CREATING A HTML FOR EACH PERSON
   peopleArr.map((person) => {
@@ -63,8 +76,6 @@
       tableRow.querySelector('.btn-danger').addEventListener('click', removeItem);
     }
   })
-
-
 
 
 // Person instance
@@ -106,7 +117,8 @@
     // Value
     let dinnerValue = Math.round(parseFloat(dinnerQuantity) * parseFloat(dinnerPrice));
     let teaValue = Math.round(parseFloat(teaQuantity) * parseFloat(teaPrice));
-
+    const newClass = document.querySelector('.custom-select').value;
+    console.log(newClass);
 
     // Total value
     let totalValue = (dinnerValue + teaValue)
