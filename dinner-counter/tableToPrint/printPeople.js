@@ -5,31 +5,33 @@ for (var key in localStorage) {
 }
 
 // FILTERING AND SORTING PEOPLE
-  const filteredPeople = peopleArr.filter((person) =>
+function sortingArr(arr) {
+  const filteredPeople = arr.filter((person) =>
     person !== null
   ).filter((person) =>
     person.hasOwnProperty('name') ? person : ''
   )
-
-  filteredPeople.sort((a, b) => {
+  // console.log(filteredPeople);
+  return filteredPeople.sort((a, b) => {
     // console.log(parseInt(a.classNum), parseInt(b.classNum));
-    parseFloat(a.classNum) < parseFloat(b.classNum) ? -1 : 1
+    return parseFloat(a.classNum) < parseFloat(b.classNum) ? -1 : 1
   })
+}
 
+const filteredPeople = sortingArr(peopleArr)
 
 filteredPeople.map((person) => {
     if ((person == null) || (person.day)) {
       return
     } else {
-      const table = document.querySelector('.table');
+      const table = document.querySelector('.person-container');
       const tableRow = document.createElement('div');
       tableRow.classList.add('person');
-
 
       const rowContent = `
             <div class="person__name">${person.name}</div>
             <div class="person__surname">${person.surname}</div>
-            <div class="person__class">${person.classNum}</div>
+            <div class="person__class">${person.classNum === '-1' ? '-' : person.classNum}</div>
             <div class="person__dinnerQuantity">${person.dinnerQuantity}</div>
             <div class="person__dinnerPrice">${person.dinnerPrice}zł</div>
             <div class="person__dinnerValue">${person.dinnerValue}zł</div>
@@ -54,7 +56,7 @@ const totalDinnerQuantity = filteredPeople.reduce((acc, currentValue) => {
 }, 0);
 
 const totalDinnerValue = filteredPeople.reduce((acc, currentValue) => {
-  return acc + currentValue.dinnerValue;
+  return Math.round((acc + currentValue.dinnerValue) * 100) / 100;
 }, 0);
 
 const totalTeaQuantity = filteredPeople.reduce((acc, currentValue) => {
@@ -62,11 +64,11 @@ const totalTeaQuantity = filteredPeople.reduce((acc, currentValue) => {
 }, 0);
 
 const totalTeaValue = filteredPeople.reduce((acc, currentValue) => {
-  return acc + currentValue.teaValue;
+  return Math.round((acc + currentValue.teaValue) * 100) / 100;
 }, 0);
 
 const totalSum = filteredPeople.reduce((acc, currentValue) => {
-  return acc + currentValue.totalValue;
+  return Math.round((acc + currentValue.totalValue) * 100) / 100;;
 }, 0);
 
 const sumTable = document.querySelector('.sumTable');

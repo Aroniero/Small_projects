@@ -70,7 +70,7 @@ const totalDinnerQuantity = sortingArr(peopleArr).reduce((acc, currentValue) => 
 }, 0);
 
 const totalDinnerValue = sortingArr(peopleArr).reduce((acc, currentValue) => {
-  return acc + currentValue.dinnerValue;
+  return Math.round((acc + currentValue.dinnerValue) * 100) / 100;
 }, 0);
 
 const totalTeaQuantity = sortingArr(peopleArr).reduce((acc, currentValue) => {
@@ -78,11 +78,11 @@ const totalTeaQuantity = sortingArr(peopleArr).reduce((acc, currentValue) => {
 }, 0);
 
 const totalTeaValue = sortingArr(peopleArr).reduce((acc, currentValue) => {
-  return acc + currentValue.teaValue;
+  return Math.round((acc + currentValue.teaValue) * 100) / 100;
 }, 0);
 
 const totalSum = sortingArr(peopleArr).reduce((acc, currentValue) => {
-  return acc + currentValue.totalValue;
+  return Math.round((acc + currentValue.totalValue)*100)/100;
 }, 0);
 
 const sumRowContainer = document.querySelector('.sumRowContainer');
@@ -94,11 +94,11 @@ const sumRowContent = `
       <th scope="col"></th>
       <th scope="col totalDinnerQuantity">${totalDinnerQuantity}</th>
       <th scope="col "></th>
-      <th scope="col totalDinnerValue">${totalDinnerValue}</th>
+      <th scope="col totalDinnerValue">${totalDinnerValue}zł</th>
       <th scope="col totalTeaQuantity">${totalTeaQuantity}</th>
       <th scope="col"></th>
-      <th scope="col totalTeaValue">${totalTeaValue}</th>
-      <th scope="col sumTotal">${totalSum}</th>
+      <th scope="col totalTeaValue">${totalTeaValue}zł</th>
+      <th scope="col sumTotal">${totalSum}zł</th>
 `
 // Appding item to the tableOutput
 sumTableRow.innerHTML = sumRowContent
@@ -223,7 +223,6 @@ sumRowContainer.appendChild(sumTableRow);
   );
 
 // UPDATING STATE _________________________________________________
-
   function changeItem() {
     const currentRow = this.parentElement.parentElement;
     // console.log(currentRow);
