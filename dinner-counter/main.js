@@ -40,14 +40,14 @@ sortingArr(peopleArr).map((person) => {
       const rowContent = `
             <td class="name">${person.name}</td>
             <td class="surname">${person.surname}</td>
-            <td class="classNum">${person.classNum === '-1' ? '-' : person.classNum}</td>
-            <td class="dinnerQuantity">${person.dinnerQuantity}</td>
-            <td class="dinnerPrice">${person.dinnerPrice}zł</td>
-            <td class="dinnerValue">${person.dinnerValue}zł</td>
-            <td class="teaQuantity">${person.teaQuantity}</td>
-            <td class="teaPrice">${person.teaPrice}zł</td>
-            <td class="teaValue">${person.teaValue}zł</td>
-            <td class="totalValue">${person.totalValue}zł</td>
+            <td class="classNum text-right">${person.classNum === '-1' ? '-' : person.classNum}</td>
+            <td class="dinnerQuantity text-right">${person.dinnerQuantity}</td>
+            <td class="dinnerPrice text-right">${person.dinnerPrice}zł</td>
+            <td class="dinnerValue text-right">${person.dinnerValue}zł</td>
+            <td class="teaQuantity text-right">${person.teaQuantity}</td>
+            <td class="teaPrice text-right">${person.teaPrice}zł</td>
+            <td class="teaValue text-right">${person.teaValue}zł</td>
+            <td class="totalValue text-right">${person.totalValue}zł</td>
             <td><button type="button" class="btn btn-danger">Usuń</button></td>
             <td><button type="button" class="btn btn-warning">Edytuj</button></td>
       `
@@ -92,13 +92,13 @@ const sumRowContent = `
       <th scope="col">RAZEM</th>
       <th scope="col"></th>
       <th scope="col"></th>
-      <th scope="col totalDinnerQuantity">${totalDinnerQuantity}</th>
-      <th scope="col "></th>
-      <th scope="col totalDinnerValue">${totalDinnerValue}zł</th>
-      <th scope="col totalTeaQuantity">${totalTeaQuantity}</th>
+      <th scope="col" class="text-right">${totalDinnerQuantity}</th>
       <th scope="col"></th>
-      <th scope="col totalTeaValue">${totalTeaValue}zł</th>
-      <th scope="col sumTotal">${totalSum}zł</th>
+      <th scope="col" class="text-right">${totalDinnerValue}zł</th>
+      <th scope="col" class="text-right">${totalTeaQuantity}</th>
+      <th scope="col" ></th>
+      <th scope="col" class="text-right">${totalTeaValue}zł</th>
+      <th scope="col" class="text-right">${totalSum}zł</th>
 `
 // Appding item to the tableOutput
 sumTableRow.innerHTML = sumRowContent
