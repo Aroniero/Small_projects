@@ -1,23 +1,32 @@
 
-.container-md{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 20px 0;
+.dateContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  max-width: 500px;
+  &__title{
+    font-size: 30px;
+  }
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // margin: 100px 0;
 
 }
 
 .stickyNotesContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
+  grid-column-gap: 1px;
+  grid-row-gap: 5px;
 
   .stickyNote{
     border: 1px solid black;
     padding: 10px;
   }
   h4 {
-    font-size: 30px;
+    font-size: 30.8px;
     font-weight: bold;
     text-align: center;
     margin: 10px 0;

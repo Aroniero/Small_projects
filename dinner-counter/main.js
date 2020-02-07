@@ -61,6 +61,53 @@ sortingArr(peopleArr).map((person) => {
     }
   })
 
+  // console.log(sortingArr(peopleArr));
+
+
+// GETTING DATA FOR SUMM ROW
+const totalDinnerQuantity = sortingArr(peopleArr).reduce((acc, currentValue) => {
+  return acc + parseInt(currentValue.dinnerQuantity);
+}, 0);
+
+const totalDinnerValue = sortingArr(peopleArr).reduce((acc, currentValue) => {
+  return acc + currentValue.dinnerValue;
+}, 0);
+
+const totalTeaQuantity = sortingArr(peopleArr).reduce((acc, currentValue) => {
+  return acc + parseInt(currentValue.teaQuantity);
+}, 0);
+
+const totalTeaValue = sortingArr(peopleArr).reduce((acc, currentValue) => {
+  return acc + currentValue.teaValue;
+}, 0);
+
+const totalSum = sortingArr(peopleArr).reduce((acc, currentValue) => {
+  return acc + currentValue.totalValue;
+}, 0);
+
+const sumRowContainer = document.querySelector('.sumRowContainer');
+const sumTableRow = document.createElement('tr');
+sumTableRow.classList.add('thead-dark');
+const sumRowContent = `
+      <th scope="col">RAZEM</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col totalDinnerQuantity">${totalDinnerQuantity}</th>
+      <th scope="col "></th>
+      <th scope="col totalDinnerValue">${totalDinnerValue}</th>
+      <th scope="col totalTeaQuantity">${totalTeaQuantity}</th>
+      <th scope="col"></th>
+      <th scope="col totalTeaValue">${totalTeaValue}</th>
+      <th scope="col sumTotal">${totalSum}</th>
+`
+// Appding item to the tableOutput
+sumTableRow.innerHTML = sumRowContent
+sumRowContainer.appendChild(sumTableRow);
+
+
+
+
+
 
 // Person instance
   class Person {
@@ -82,7 +129,6 @@ sortingArr(peopleArr).map((person) => {
     }
   }
 
-
 // Adding item to the table
   function addItem(e) {
     e.preventDefault()
@@ -99,8 +145,11 @@ sortingArr(peopleArr).map((person) => {
     let teaPrice = document.querySelector('#teaPrice').value;
     console.log(name, surname);
     // Value
-    let dinnerValue = Math.round(parseFloat(dinnerQuantity) * parseFloat(dinnerPrice));
-    let teaValue = Math.round(parseFloat(teaQuantity) * parseFloat(teaPrice));
+    let dinnerValue = parseFloat(dinnerQuantity) * parseFloat(dinnerPrice);
+    let teaValue = parseFloat(teaQuantity) * parseFloat(teaPrice);
+
+        dinnerValue = Math.round(dinnerValue * 100) / 100;
+        teaValue = Math.round(teaValue * 100) / 100;
 
 
 
