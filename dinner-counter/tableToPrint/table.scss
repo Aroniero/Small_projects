@@ -16,19 +16,21 @@ body{
 
 
 .person div {
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
 
 .person {
   border-bottom: 1px solid black;
-  display: grid;
-  /* grid-auto-rows: minmax(50px, auto); */
-  grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 4fr ;
 
-  &__name,&__surname,&__class,&__dinnerQuantity,&__dinnerPrice,&__dinnerValue,
+  display: grid;
+  grid-auto-rows: minmax(auto, 50px);
+  grid-template-columns: 0.2fr 1fr 1fr .2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 6fr;
+
+  &__lp, &__name,&__surname,&__class,&__dinnerQuantity,&__dinnerPrice,&__dinnerValue,
   &__teaQuantity,&__teaPrice,&__teaValue,&__totalSum{
+    min-width: 100px;
     border-right: 1px solid black;
   }
 }

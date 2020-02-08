@@ -42,7 +42,7 @@ sortingArr(peopleArr).map((person) => {
             <td class="lp">${lp++}</td>
             <td class="name">${person.name}</td>
             <td class="surname">${person.surname}</td>
-            <td class="classNum text-right">${person.classNum === '-1' ? '-' : person.classNum}</td>
+            <td class="classNum text-center">${person.classNum === '-1' ? '-' : person.classNum}</td>
             <td class="dinnerQuantity text-right">${person.dinnerQuantity}</td>
             <td class="dinnerPrice text-right">${person.dinnerPrice}zł</td>
             <td class="dinnerValue text-right">${person.dinnerValue}zł</td>

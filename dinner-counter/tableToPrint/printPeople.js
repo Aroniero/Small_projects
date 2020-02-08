@@ -20,6 +20,8 @@ function sortingArr(arr) {
 
 const filteredPeople = sortingArr(peopleArr)
 
+// CREATING A HTML FOR EACH PERSON
+let lp = 1;
 filteredPeople.map((person) => {
     if ((person == null) || (person.day)) {
       return
@@ -29,6 +31,7 @@ filteredPeople.map((person) => {
       tableRow.classList.add('person');
 
       const rowContent = `
+            <div class="person__lp">${lp++}</div>
             <div class="person__name">${person.name}</div>
             <div class="person__surname">${person.surname}</div>
             <div class="person__class">${person.classNum === '-1' ? '-' : person.classNum}</div>
@@ -75,6 +78,7 @@ const sumTable = document.querySelector('.sumTable');
 const sumRow = document.createElement('div');
 sumRow.classList.add('person');
 const sumRowContent = `
+    <div class="person__lp">${lp++}</div>
     <div class="person__name">RAZEM</div>
     <div class="person__surname"></div>
     <div class="person__class"></div>

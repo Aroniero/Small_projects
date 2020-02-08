@@ -1,14 +1,7 @@
 
 
-
-
-const date = document.querySelector('.payDate');
-
-
-
-
-
 // Listening for change in "Month for payment" field
+const date = document.querySelector('.payDate');
 date.addEventListener('change', (e) => {
   const currDate = e.target.value;
   const year = currDate.slice(0,4);
@@ -25,15 +18,23 @@ date.addEventListener('change', (e) => {
   location.reload();
 })
 
-// Listening for change in "Month for dinner" field
+// Displaying and listening for "Month for dinner"
   let dinnerMonth = document.querySelector('.dinnerMonth');
+  // Displaying current teaMonth
+  let currDinnerMonth = JSON.parse(localStorage.getItem('dinnerMonth'));
+  dinnerMonth.value = currDinnerMonth;
+  // Listening for change in "Month for dinner" field
   dinnerMonth.addEventListener('change', (e) => {
     localStorage.setItem('dinnerMonth', JSON.stringify(e.target.value));
     location.reload();
   })
 
-// Listening for change in "Month for tea" field
+// Displaying and listening for "Month for tea"
   let teaMonth = document.querySelector('.teaMonth');
+  // Displaying current teaMonth
+  let currTeaMonth = JSON.parse(localStorage.getItem('teaMonth'));
+  teaMonth.value = currTeaMonth;
+  // Listening for change in "Month for tea" field
   teaMonth.addEventListener('change', (e) => {
     localStorage.setItem('teaMonth', JSON.stringify(e.target.value));
     location.reload();
@@ -75,7 +76,7 @@ sortingArr(peopleArr).map((person) => {
     const dinnerMonth = JSON.parse(localStorage.getItem('dinnerMonth'))
     const teaMonth = JSON.parse(localStorage.getItem('teaMonth'))
 
-    console.log(teaMonth);
+
 
     const rowContent = `
         <h4>Informacja dla ${person.classNum === '-1' ? 'nauczycieli' : `rodziców`}</h4>
