@@ -31,6 +31,7 @@
     // console.log(sorted);
 
 // CREATING A HTML FOR EACH PERSON
+let lp = 1;
 sortingArr(peopleArr).map((person) => {
     if (person == null || (person.day)) {
       return
@@ -38,6 +39,7 @@ sortingArr(peopleArr).map((person) => {
       const table = document.querySelector('#tableOutput');
       const tableRow = document.createElement('tr');
       const rowContent = `
+            <td class="lp">${lp++}</td>
             <td class="name">${person.name}</td>
             <td class="surname">${person.surname}</td>
             <td class="classNum text-right">${person.classNum === '-1' ? '-' : person.classNum}</td>
@@ -89,6 +91,7 @@ const sumRowContainer = document.querySelector('.sumRowContainer');
 const sumTableRow = document.createElement('tr');
 sumTableRow.classList.add('thead-dark');
 const sumRowContent = `
+      <th scope="col"></th>
       <th scope="col">RAZEM</th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -167,7 +170,9 @@ sumRowContainer.appendChild(sumTableRow);
     // CREATING A ROW FOR ITEM
     const table = document.querySelector('#tableOutput');
     const tableRow = document.createElement('tr');
+
     const rowContent = `
+          <td class="lp">${lp++}</td>
           <td class="name">${person.name}</td>
           <td class="surname">${person.surname}</td>
           <td class="classNum">${person.classNum}</td>
@@ -214,7 +219,8 @@ sumRowContainer.appendChild(sumTableRow);
     localStorage.removeItem(`${name}-${surname}`);
 
     this.parentElement.parentElement.remove();
-
+    location.reload();
+    return false;
 
   }
   deleteButtons.forEach((singleButton) => {
