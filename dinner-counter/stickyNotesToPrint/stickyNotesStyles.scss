@@ -47,13 +47,12 @@
   display: grid;
 
   max-width: 480px;
-  grid-template-columns: 270px 190px;
+  grid-template-columns: 240px 220px;
   margin: auto;
   font-size: 22px;
   border: 1px solid black;
   padding: 0 10px;
   .person, .classNum{
-
     text-align: center;
 
   }

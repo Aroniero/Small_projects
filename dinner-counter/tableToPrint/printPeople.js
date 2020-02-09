@@ -80,16 +80,16 @@ sumRow.classList.add('person');
 const sumRowContent = `
     <div class="person__lp">${lp++}</div>
     <div class="person__name">RAZEM</div>
-    <div class="person__surname"></div>
-    <div class="person__class"></div>
+    <div class="person__surname">-</div>
+    <div class="person__class">-</div>
     <div class="person__dinnerQuantity">${totalDinnerQuantity}</div>
-    <div class="person__dinnerPrice"></div>
+    <div class="person__dinnerPrice">-</div>
     <div class="person__dinnerValue">${totalDinnerValue}zł</div>
     <div class="person__teaQuantity">${totalTeaQuantity}</div>
-    <div class="person__teaPrice"></div>
+    <div class="person__teaPrice">-</div>
     <div class="person__teaValue">${totalTeaValue}zł</div>
     <div class="person__totalSum">${totalSum}zł</div>
-    <div class="person__signature"></div>
+    <div class="person__signature">  </div>
 `
 // Appding item to the tableOutput
 sumRow.innerHTML = sumRowContent;

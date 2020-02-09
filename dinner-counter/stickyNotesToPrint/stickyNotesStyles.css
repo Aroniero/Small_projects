@@ -57,8 +57,8 @@
   display: -ms-grid;
   display: grid;
   max-width: 480px;
-  -ms-grid-columns: 270px 190px;
-      grid-template-columns: 270px 190px;
+  -ms-grid-columns: 240px 220px;
+      grid-template-columns: 240px 220px;
   margin: auto;
   font-size: 22px;
   border: 1px solid black;

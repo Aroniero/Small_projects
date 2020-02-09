@@ -11,8 +11,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-  margin-top: 100px;
+.tableTitle {
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.tableTitle__info {
+  margin: 20px 0 10px 0;
+}
+
+.tableTitle__tablePage {
+  margin-left: 200px;
+}
+
+.table {
+  border-top: 1px solid black;
 }
 
 .person div {
@@ -24,13 +38,12 @@ body {
   border-bottom: 1px solid black;
   display: -ms-grid;
   display: grid;
-  grid-auto-rows: minmax(auto, 50px);
-  -ms-grid-columns: 0.2fr 1fr 1fr .2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 6fr;
-      grid-template-columns: 0.2fr 1fr 1fr .2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 6fr;
+  -ms-grid-columns: .2fr 1.5fr 1.5fr .2fr .9fr .9fr .9fr .9fr .9fr .9fr 1.5fr 6fr;
+      grid-template-columns: .2fr 1.5fr 1.5fr .2fr .9fr .9fr .9fr .9fr .9fr .9fr 1.5fr 6fr;
 }
 
 .person__lp, .person__name, .person__surname, .person__class, .person__dinnerQuantity, .person__dinnerPrice, .person__dinnerValue, .person__teaQuantity, .person__teaPrice, .person__teaValue, .person__totalSum {
-  min-width: 100px;
+  min-width: 50px;
   border-right: 1px solid black;
 }
 /*# sourceMappingURL=table.css.map */
