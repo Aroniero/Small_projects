@@ -18,14 +18,17 @@
     <form class="needs-validation" id="dinnerForm" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
-          <label for="validationTooltip01">Imię</label>
-          <input type="text" class="form-control" id="name"  required>
+          <label for="validationCustom01">Imię</label>
+          <input type="text" class="form-control" id="name" id="validationCustom01" required>
+
         </div>
 
         <div class="col-md-4 mb-3">
-          <label for="validationTooltip01">Nazwisko</label>
-          <input type="text" class="form-control" id="surname" required>
+          <label for="validationCustom02">Nazwisko</label>
+          <input type="text" class="form-control" id="surname" id="validationCustom02" required>
+
         </div>
+
 
 
         <div class="col-md-4 mb-3">
@@ -42,29 +45,33 @@
             <option value="8">8</option>
             <option value="-1">Nauczyciel</option>
           </select>
+
         </div>
       </div>
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Ilość Obiadów</label>
         <input type="number" class="form-control" id="dinnerQuantity" required>
+
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Cena Obiadów</label>
         <input type="number" class="form-control text-center" id="dinnerPrice" value="3.5" required>
+
       </div>
 
     </div>
     <div class="form-row">
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Ilość herbaty</label>
-        <input type="number" class="form-control" id="teaQuantity" required>
+        <input type="number" class="form-control" id="teaQuantity"  required>
+
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationTooltip01">Cena herbaty</label>
         <input type="number" class="form-control text-center" id="teaPrice" value="0.9" required>
-      </div>
 
+      </div>
     </div>
 
     <button class="col-md-12 btn-lg btn-primary" type="submit">Dodaj osobę</button>
@@ -107,9 +114,65 @@
 
 </div>
 
+<!-- <div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-danger alert-dismissable fade show" role="alert">
+        I am alert
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="validateWarning">Show modal</button>
+    </div>
+  </div>
+</div>
 
+<div class="modal" id="validateWarning">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Please confirm</h2>
+        <button type="button " class="close" ><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <p>this is the modal body</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div> -->
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
