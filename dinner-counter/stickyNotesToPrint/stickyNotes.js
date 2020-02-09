@@ -82,11 +82,11 @@ sortingArr(peopleArr).map((person) => {
         <h4>Informacja dla ${person.classNum === '-1' ? 'nauczycieli' : `rodziców`}</h4>
         <h5>Uprzejmie proszę o wpłatę należności z tytułu <br/> dożywiania do p. Aldony Godlewskiej</h5>
         <div class="person-container">
-          <div class="person ">${person.surname}  ${person.name}</div>
+          <div class="person ">${person.surname} ${person.name}</div>
           <div class="classNum">${person.classNum === '-1' ? '' : `Klasa ${person.classNum}`}</div>
-          <div class="dinners">Obiady (${dinnerMonth}): </div>
+          <div class="dinners">Obiady ${dinnerMonth === 'Wybierz...' ? '' : `(${dinnerMonth})`}: </div>
           <div class="dinnersValue">${person.dinnerQuantity} * ${person.dinnerPrice}zł = ${person.dinnerValue} zł</div>
-          <div class="teas">Herbaty (${teaMonth}): </div>
+          <div class="teas">Herbaty ${teaMonth === 'Wybierz...' ? '' : `(${teaMonth})`}: </div>
           <div class="teasValue">${person.teaQuantity} * ${person.teaPrice}zł = ${person.teaValue} zł</div>
           <div class="total">Razem: </div>
           <div class="totalValue">${person.totalValue} zł</div>
