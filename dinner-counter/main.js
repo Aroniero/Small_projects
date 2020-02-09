@@ -219,9 +219,9 @@ sumRowContainer.appendChild(sumTableRow);
     tableRow.querySelector('.btn-danger').addEventListener('click', removeItem);
 
     // Clearing inputs
-    dinnerForm.reset();
+    // dinnerForm.reset();
 
-    // location.reload();
+    location.reload();
     return false;
 
   }
